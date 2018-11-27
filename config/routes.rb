@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get 'about', to: 'pages#about'
+
+  #paths for CRUD on articles
+  resources :articles
 end
