@@ -18,6 +18,32 @@ $navbar-default-bg: #0067A4;
   text-align: center;
 }
 
+.jumbotron {
+  background-image: asset-url('transparentlogo.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 1000px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-xlarge {
+  font-size: 1.7em;
+  background-color: #0067A4;
+}
+
+footer a:hover {
+  color: #0067A4;
+}
+
+
 
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
