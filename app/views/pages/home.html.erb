@@ -7,14 +7,15 @@
     <meta name="author" content="SitePoint">
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
-    <h1>This is my homepage!</h1>
+    <div class="center jumbotron">
+      <h1>Welcome to The Backpack Blazer</h1>
+      <p>
+        <%= link_to 'Sign Up Now', "#", class: "btn btn-primary btn-large" %>
+      </p>
+    </div>
   </head>
 
   <body>
     <script src="js/scripts.js"></script>
   </body>
 </html>
-
-<%= link_to 'Alpha Blog', articles_path %>
-|
-<%= link_to 'About', about_path %>
