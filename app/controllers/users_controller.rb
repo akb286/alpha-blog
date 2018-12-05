@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -38,14 +39,13 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    respond_to do |format|
+    @user = User.find(params[:id])
       if @user.update(user_params)
-        flash[:success] = "Account Updated Successfully"
+        flash[:success] = "Your account was updated successfully"
         redirect_to articles_path
       else
         render 'edit'
       end
-    end
   end
 
   # DELETE /users/1
