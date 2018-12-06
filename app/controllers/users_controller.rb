@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
     @user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
@@ -21,13 +20,11 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
   end
 
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to The Backpack Blazer, #{@user.username}!"
       redirect_to articles_path
