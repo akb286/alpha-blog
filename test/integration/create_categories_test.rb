@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CreateCategoriesTest < ActionDispatch::IntegrationTest
   def setup
-    @user = User.c  reate(username: "john", email: "john@example.com", password: "password", admin: true)
+    @user = User.create(username: "john", email: "john@example.com", password: "password", admin: true)
   end
 
   test "get new category form and create category" do
@@ -12,7 +12,7 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
     assert_difference 'Category.count', 1 do
       post categories_path, params: { category: { name: "Sports"} }
       follow_redirect!
-    end 
+    end
     assert_template 'categories/index'
     assert_match "Sports", response.body
   end
