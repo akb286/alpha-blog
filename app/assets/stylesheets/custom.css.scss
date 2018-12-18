@@ -1,5 +1,8 @@
 $navbar-default-bg: #0067A4;
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 #logo {
   float: left;
   font-size: 1.7em;
@@ -14,9 +17,6 @@ $navbar-default-bg: #0067A4;
   text-decoration: none;
 }
 
-#topheader .navbar-nav li > a {
-  color: #FFF;
-}
 
 .center {
   text-align: center;
@@ -58,6 +58,11 @@ $navbar-default-bg: #0067A4;
   font-size: 1.5em;
 }
 
+.article-title li:hover {
+  color: red;
+}
+
+
 .article-body {
   border-top: 1px solid #eaeaea;
   padding-top: 15px;
@@ -80,14 +85,40 @@ $navbar-default-bg: #0067A4;
   width: auto !important;
 }
 
+/*-- footer --*/
 footer {
   margin-top: 45px;
   padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
 }
 
 footer a:hover {
-  color: #0067A4;
+  color: #222;
 }
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+.breadcrumb a:hover {
+  background-color: white !important;
+}
+
+/*-- change navbar dropdown color --*/
+.navbar-default .navbar-nav > li > a {
+    color: #fff !important;
+  }
 
 .btn-enter {
   color: #ffffff;
@@ -111,6 +142,7 @@ footer a:hover {
   background-image: none;
 }
 
+
 .btn-enter.disabled,
 .btn-enter[disabled],
 fieldset[disabled] .btn-enter,
@@ -127,15 +159,21 @@ fieldset[disabled] .btn-enter:active,
 .btn-enter[disabled].active,
 fieldset[disabled] .btn-enter.active {
   background-color: #FF8C00;
-  border-color: #FFf;
+  border-color: #FFF;
 }
 
-.btn-enter .badge {
-  color: #FF8C00;
-  background-color: #ffffff;
+.badge {
+  color: black;
+  background-color: #CEF6F5 !important;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold !important;
+  }
+
+.badge:hover {
+  background-color: #CEF6F5 !important;
 }
 
-
-// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import "bootstrap-sprockets";
-@import "bootstrap";
+.input_checkbox input {
+  width: auto !important;
+}
