@@ -57,11 +57,9 @@ $navbar-default-bg: #0067A4;
   font-weight: bold;
   font-size: 1.5em;
 }
-
-.article-title li:hover {
-  color: red;
+.article-title a {
+  text-decoration: none;
 }
-
 
 .article-body {
   border-top: 1px solid #eaeaea;
@@ -74,15 +72,8 @@ $navbar-default-bg: #0067A4;
   padding-left: 0px;
 }
 
-.badge {
-  background-color: teal;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
-}
-
-.input_checkbox input {
-  width: auto !important;
+.list-title {
+  color: #337ab7;
 }
 
 /*-- footer --*/
