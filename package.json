@@ -1,5 +1,7 @@
 {
   "name": "alpha-blog",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^11.2.0"
+  }
 }
