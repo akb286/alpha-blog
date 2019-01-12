@@ -33,6 +33,11 @@ class ArticlesController < ApplicationController
     else
       render 'edit'
     end
+
+    def search
+      @article = Article.new_from_lookup(params[:stock])
+      redirect_to article_path(@article)
+    end
   end
 
   def show
