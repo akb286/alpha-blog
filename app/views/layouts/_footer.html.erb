@@ -3,10 +3,8 @@
     <nav>
       <ol class="breadcrumb">
         <li>Copyright &copy; The Backpack Blazer</li>
-        <li><a href="#">Home</a></li>
-        <li>
-          <a href="#">About</a></li>
-        </li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
           <% if logged_in? %>
             <li><%= link_to "Log out", logout_path, method: :delete %></li>
             <li class="dropdown">

@@ -171,3 +171,15 @@ fieldset[disabled] .btn-enter.active {
 .input_checkbox input {
   width: auto !important;
 }
+
+.portrait {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+}
+
+.about-me {
+  font-weight: 1.5em;
+}
