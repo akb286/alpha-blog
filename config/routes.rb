@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   #paths for CRUD on articles
   resources :articles
   resources :categories, except: [:destroy]
+  resources :searches
 end

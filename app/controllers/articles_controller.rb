@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
     # @articles = Article.paginate(page: params[:page], per_page: 5)
     # @articles = @articles.paginate(page: params[:page], per_page: 5)
 
-    if params[:search] # For more information visit http://www.rymcmahon.com/articles/2
+    if params[:search]
       @articles = Article.search(params[:search]).paginate(page: params[:page], per_page: 12)
     else
       @articles = Article.paginate(page: params[:page], per_page: 12)
@@ -44,11 +44,16 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    @article = Article.find(params[:id])
     if @article.update(article_params)
       flash[:success] = "Article was successfully updated"
       redirect_to article_path(@article)
     else
       render 'edit'
+    end
+
+    def show
+      @article = Article.find(params[:id]) # find 'id' from the params hash
     end
 
     def search
@@ -57,10 +62,8 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def destroy
+    @article = Article.find(params[:id])
     @article.destroy
     flash[:danger] = "Article was successfully deleted"
     redirect_to articles_path
