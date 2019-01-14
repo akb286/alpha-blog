@@ -1,25 +1,25 @@
-<section class="blog-wrapper">
-  <div class="container">
-    <h2>Blog <b>Articles</b></h2>
+<h2>Blog
+  <b>Articles</b>
+</h2>
 
-    <div class="row-page row">
+<div class="row-page row">
 
-      <div class="paginate top">
-        <center><%= will_paginate %></center> <!-- Display pagination -->
-      </div>
+  <div class="paginate top">
+    <center><%= will_paginate %></center>
+    <!-- Display pagination -->
+  </div>
 
-      <!-- Message: No Articles Found -->
-      <% if @articles.blank? %>
-        <h4>There are no articles containing the term <%= params[:search] %>.</h4>
-      <% end %>
+  <!-- Message: No Articles Found -->
+  <% if @articles.blank? %>
+    <h4>There are no articles containing the term
+      <%= params[:search] %>.</h4>
+  <% end %>
 
-      <%= render 'article', obj: @articles %> <!-- Render Articles list -->
+  <%= render 'article', obj: @articles %>
+  <!-- Render Articles list -->
 
-      <div class="paginate bottom">
-        <center><%= will_paginate %></center>
-      </div>
+  <div class="paginate bottom">
+    <center><%= will_paginate %></center>
+  </div>
 
-    </div>
-
-  </div> <!-- /.container -->
-</section>
+</div>
