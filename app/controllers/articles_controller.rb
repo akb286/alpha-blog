@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
     @articles = Article.paginate(page: params[:page], per_page: 5)
   end
 
+
   def new
     @article = Article.new
   end
@@ -14,6 +15,18 @@ class ArticlesController < ApplicationController
   def edit
   end
 
+  def self.search(search)
+    if search
+      articles = Article.find_by(name: search)
+      if articles
+        self.where(article.id: article)
+      else
+        Article.all
+      end
+    else
+      Article.all
+    end
+  end
 
   def create
     @article = Article.new(article_params)
