@@ -4,7 +4,15 @@ class ArticlesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 5)
+    # @articles = Article.all # get all articles from the database
+    # @articles = Article.paginate(page: params[:page], per_page: 5)
+    # @articles = @articles.paginate(page: params[:page], per_page: 5)
+
+    if params[:search] # For more information visit http://www.rymcmahon.com/articles/2
+      @articles = Article.search(params[:search]).paginate(page: params[:page], per_page: 12)
+    else
+      @articles = Article.paginate(page: params[:page], per_page: 12)
+    end
   end
 
 
@@ -13,20 +21,16 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id]) # find 'id' from the params hash
   end
 
-  def self.search(search)
-    if search
-      articles = Article.find_by(name: search)
-      if articles
-        self.where(article.id: article)
-      else
-        Article.all
-      end
-    else
-      Article.all
-    end
-  end
+#   def self.search(search)
+#   if search
+#     find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+#   else
+#     find(:all)
+#   end
+# end
 
   def create
     @article = Article.new(article_params)

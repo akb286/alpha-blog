@@ -18,14 +18,16 @@
         <!-- zxp<li><%= link_to "Users", users_path %></li> -->
         <% if logged_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions
+              <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><%= link_to "New Article", new_article_path %></li>
             </ul>
           </li>
         <% end %>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories
+            <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to "All Categories", categories_path %></li>
             <% Category.all.each do |category| %>
@@ -38,19 +40,25 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-right">
-        <%= form_tag(articles_path method: :get) do %>
-        <%= text_field_tag :article, params[:search] %>
-        <%= submit_tag 'Search', name: nil %>
+      <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form navbar-right">
+          <%= form_tag(articles_path, :method => "get", id: "search-form", :class => "navbar-form navbar-left") do %>
+          <div class="form-group">
+            <%= text_field_tag :search, params[:search], placeholder: "Search Articles", class: "form-control" %>
+          </div>
+          <%= submit_tag "Search", :name => nil, class: "btn btn-enter" %>
+          &nbsp
+          <ul class="nav navbar-nav navbar-right">
+            <a href="https://www.instagram.com/the_backpack_blazer/" target="_blank" class="navbar-center"><img src="/images/insta.png"></a>
+            <a href="https://www.facebook.com/dustin.hansen.520" target="_blank" class="navbar-center"><img src="/images/facebook.png"></a>
+            <a href="https://www.youtube.com/channel/UCGxffE3vsJmuFUyg84_bCBQ" target="_blank" class="navbar-center"><img src="/images/youtube.png"></a>
+            &nbsp
+          </ul>
         <% end %>
-        <!-- <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-enter">Submit</button> -->
-        <a href="https://www.instagram.com/the_backpack_blazer/" target="_blank" class="navbar-center"><img src="/images/insta.png"></a>
-        <a href="https://www.facebook.com/dustin.hansen.520" target="_blank" class="navbar-center"><img src="/images/facebook.png"></a>
-        <a href="https://www.youtube.com/channel/UCGxffE3vsJmuFUyg84_bCBQ" target="_blank" class="navbar-center"><img src="/images/youtube.png"></a>
       </form>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </ul>
+  </div>
+  <!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
 </nav>
