@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <!-- include summernote css/js -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+
     <title>The Backpack Blazer</title>
-    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script> -->
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,14 +27,5 @@
     </div>
     <%= render 'layouts/footer' %>
 
-
-    <!-- <script src="[ckeditor-build-path]/ckeditor.js"></script> -->
-    <!-- <script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-    </script> -->
   </body>
 </html>
