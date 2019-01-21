@@ -20,13 +20,14 @@
 
 
 
-$('[data-provider="summernote"]').each(function(){
-  $(this).summernote({ });
-})
-
-$('#summernote').summernote({
-  height: 300,                 // set editor height
-  minHeight: null,             // set minimum height of editor
-  maxHeight: null,             // set maximum height of editor
-  focus: true                  // set focus to editable area after initializing summernote
+$(document).on("submit","#form-group",function(e){
+    $("#desc").val($('#desc').code());
+    return true;
 });
+
+
+$(document).on("submit","#form-group",function(e){
+    if ($('#desc').summernote('codeview.isActivated')) {
+        $('#desc').summernote('codeview.deactivate');
+    }
+}
